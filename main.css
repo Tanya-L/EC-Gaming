@@ -1,0 +1,53 @@
+
+
+#bamse {
+    height: 90px;
+    width: 90px;
+}
+
+#bamseText {
+    font-size: 35px;
+    color: blue;
+}
+
+#honung {
+    height: 50px;
+    width: 50px;
+}
+
+#home {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 18px;
+    right: 16px;
+}
+
+header {
+    text-align: left;
+    padding: 10px;
+    font-family: sans-serif;
+}
+.play {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+   left: 50%;
+    top: 50%;
+    text-align: center;
+}
+
+.item{
+  width:200px;
+  text-align:center;
+  display:block;
+  background-color: transparent;
+  border: 1px solid transparent;
+  margin-right: 10px;
+  margin-bottom: 1px;
+  float:left;
+}
+
+#index-gallery{
+  width:465px;
+}
