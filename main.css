@@ -1,6 +1,6 @@
 
 
-#bamse {
+img #bamse {
     height: 90px;
     width: 90px;
 }
@@ -10,12 +10,12 @@
     color: blue;
 }
 
-#honung {
+img #honung {
     height: 50px;
     width: 50px;
 }
 
-#home {
+img #home {
     height: 50px;
     width: 50px;
     position: absolute;
@@ -50,4 +50,8 @@ header {
 
 #index-gallery{
   width:465px;
+}
+
+.debug {
+    border: 1px solid red;
 }
