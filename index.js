@@ -9,8 +9,7 @@ var secondNumber = 0;
 var answer = [];
 
 function prepareGame() {
-
-    operation = "+";
+    operation = "plus";
     // returns a random integer from 1 to 5
     firstNumber = Math.floor(Math.random() * 5) + 1;
     secondNumber = Math.floor(Math.random() * 5) + 1;
@@ -27,11 +26,42 @@ function prepareGame() {
     // add right answer
     answer.push(firstNumber + secondNumber);
 
-    // shuffle 
-    answer.sort(function (a, b) {
-        return Math.floor(Math.random() * 2);
-    });
-
+    // shuffle
+    answer = answer
+        .map(function (a) { return { sort: Math.random(), value: a }; })
+        .sort(function (a, b) { return a.sort - b.sort; })
+        .map(function (a) { return a.value; });
 }
 
 prepareGame();
+
+// make image tag or 2 tags for the number 
+function makeImgSrc(n) {
+    var digit = n % 10;
+    var result = "<img src='image/" + digit + ".png'>";
+    if (n < 10) {
+        return result;
+    }
+    return makeImgSrc(Math.floor(n / 10)) + result;
+}
+
+
+// display game state 
+function display() {
+    var element = document.getElementById("firstNumber");
+    element.innerHTML = makeImgSrc(firstNumber);
+
+    element = document.getElementById("operation");
+    element.innerHTML = "<img src='image/" + operation + ".png' width='50'>";
+
+    element = document.getElementById("secondNumber");
+    element.innerHTML = makeImgSrc(secondNumber);
+
+    for (var i = 0; i <= 2; i++) {
+        element = document.getElementById("answer" + i);
+        element.innerHTML = makeImgSrc(answer[i]);
+    }
+}
+
+display();
+
