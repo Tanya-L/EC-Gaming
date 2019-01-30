@@ -48,9 +48,6 @@ function makeImgSrc(n) {
     return makeImgSrc(Math.floor(n / 10)) + result;
 }
 
-// jQuery ????
-
-
 // display game state 
 function display() {
     var element = document.getElementById("firstNumber");
