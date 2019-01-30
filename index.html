@@ -7,50 +7,45 @@
     <meta name="Author" content="" />
     <link rel="stylesheet" type="text/css" href="/main.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <script src="jquery-3.3.1.js"></script>
 </head>
 
 <body>
-
-
     <header>
-
-        <!-- <img id="bamse" src="image/bamse.gif" alt="bamse"> -->
-        <span id="bamseText">Räkna med Bamse</span>
-        <!-- <img id="honung" src="image/dunder.png" alt="honung"> 
-        <img id="home" src="image/home.png" alt="home">  -->
+        <div class='container'>
+            <img id="bamse" src="image/bamse.gif" alt="bamse">
+            <div id="bamseText">Räkna med Bamse</div>
+            <img id="honung" src="image/dunder.png" alt="honung">
+            <img id="home" src="image/home.png" alt="home">
+        </div>
     </header>
 
     <main>
-        <div id="index-gallery">
-            <div class="item">
-                <!-- <a href="firstQuestions.html"> <img class="play" src="image/play.png" alt="play"  /></a>  -->
-                <p>Börja Spela</p>
+        <div class='container'>
+            <div id="index-gallery">
+                <div class="item">
+                    <!-- <a href="firstQuestions.html"> <img class="play" src="image/play.png" alt="play"  /></a>  -->
+                    <p>Börja Spela</p>
+                </div>
+                <table style="width:100%">
+                    <tr>
+                        <td id="firstNumber">firstNumber</td>
+                        <td id="operation">operation</td>
+                        <td id="secondNumber">secondNumber</td>
+                        <td id="equals"><img src="image/likamed.png"></td>
+                        <td><img src="image/question.jpeg" width="50"></td>
+                    </tr>
+                </table>
+                <table style="width:100%">
+                    <tr>
+                        <td nowrap id="answer0">1</td>
+                        <td><img src="image/branch2.png" width='50'></td>
+                        <td nowrap id="answer1">2</td>
+                        <td><img src="image/branch2.png" width='50'></td>
+                        <td nowrap id="answer2">3</td>
+                    </tr>
+                </table>
             </div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div>
-
-            </div>
-            <table style="width:100%">
-                <tr>
-                    <td id="firstNumber">firstNumber</td>
-                    <td id="operation">operation</td>
-                    <td id="secondNumber">secondNumber</td>
-                    <td id="equals"><img src="image/likamed.png"></td>
-                    <!-- add image "?" -->
-                    <td><img src="image/question.jpeg" width="50"></td>
-                </tr>
-            </table>
-            <table style="width:100%">
-                <tr>
-                    <td nowrap id="answer0">1</td>
-                    <td><img src="image/branch2.png" width='50'></td>
-                    <td nowrap id="answer1">2</td>
-                    <td><img src="image/branch2.png" width='50'></td>
-                    <td nowrap id="answer2">3</td>
-                </tr>
-            </table>
         </div>
     </main>
 

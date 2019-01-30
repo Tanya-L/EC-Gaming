@@ -1,21 +1,24 @@
+div.container {
+    margin: auto;
+    width: 70%;
+}
 
-
-img #bamse {
+img#bamse {
     height: 90px;
     width: 90px;
 }
 
-#bamseText {
+div#bamseText {
     font-size: 35px;
     color: blue;
 }
 
-img #honung {
+img#honung {
     height: 50px;
     width: 50px;
 }
 
-img #home {
+img#home {
     height: 50px;
     width: 50px;
     position: absolute;
@@ -32,7 +35,7 @@ header {
     height: 300px;
     width: 300px;
     position: absolute;
-   left: 50%;
+    left: 50%;
     top: 50%;
     text-align: center;
 }

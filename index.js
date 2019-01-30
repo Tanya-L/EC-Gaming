@@ -1,4 +1,4 @@
-var level = 1;
+var level = localStorage.getItem('level') || 1;
 var operation = "";
 
 // first and second numbers for game
@@ -18,6 +18,9 @@ function prepareGame() {
     while (answer.length < 2) {
         var variant = Math.floor(Math.random() * 10) + 1;
         if (variant == firstNumber + secondNumber) {
+            continue;
+        }
+        if (answer.includes(variant)) {
             continue;
         }
         answer.push(variant);
@@ -45,6 +48,8 @@ function makeImgSrc(n) {
     return makeImgSrc(Math.floor(n / 10)) + result;
 }
 
+// jQuery ????
+
 
 // display game state 
 function display() {
@@ -64,4 +69,18 @@ function display() {
 }
 
 display();
+
+// jQuery make onclick
+$("#answer0").click(function () { checkAnswer(0); });
+$("#answer1").click(function () { checkAnswer(1); });
+$("#answer2").click(function () { checkAnswer(2); });
+
+// check n-th answer in answer array
+function checkAnswer(n) {
+    console.log("n=" + n + " answer=" + answer);
+    if (answer[n] == firstNumber + secondNumber) {
+        localStorage.setItem('level', level + 1)
+        window.location.href ="right.html";
+    } else window.location.href ="wrong.html";
+}
 
