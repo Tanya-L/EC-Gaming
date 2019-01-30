@@ -1,4 +1,4 @@
-var level = localStorage.getItem('level') || 1;
+var level = JSON.parse(localStorage.getItem('level')) || 1;
 var operation = "";
 
 // first and second numbers for game
@@ -9,15 +9,27 @@ var secondNumber = 0;
 var answer = [];
 
 function prepareGame() {
-    operation = "plus";
-    // returns a random integer from 1 to 5
-    firstNumber = Math.floor(Math.random() * 5) + 1;
-    secondNumber = Math.floor(Math.random() * 5) + 1;
+
+    if (level <= 4) {
+        operation = "plus";
+        // returns a random integer from 1 to 5
+        firstNumber = Math.floor(Math.random() * 5) + 1;
+        secondNumber = Math.floor(Math.random() * 5) + 1;
+    } else if (level <= 8) {
+        operation = "minus";
+        // returns a random integer from 2 to 10
+        firstNumber = Math.floor(Math.random() * 9) + 1;
+        secondNumber = Math.floor(Math.random() * firstNumber) + 1;
+    } // end game condition
+    else {
+        window.location.href = "lastPage.html";
+        return;
+    }
 
     // add wrong answers until we have 2
     while (answer.length < 2) {
         var variant = Math.floor(Math.random() * 10) + 1;
-        if (variant == firstNumber + secondNumber) {
+        if (variant == correctAnswer()) {
             continue;
         }
         if (answer.includes(variant)) {
@@ -27,13 +39,22 @@ function prepareGame() {
     }
 
     // add right answer
-    answer.push(firstNumber + secondNumber);
+    answer.push(correctAnswer());
 
     // shuffle
     answer = answer
         .map(function (a) { return { sort: Math.random(), value: a }; })
         .sort(function (a, b) { return a.sort - b.sort; })
         .map(function (a) { return a.value; });
+
+}
+
+
+// get correct answer
+function correctAnswer() {
+    if (operation == "plus") {
+        return firstNumber + secondNumber;
+    } else { return firstNumber - secondNumber; }
 }
 
 prepareGame();
@@ -75,9 +96,10 @@ $("#answer2").click(function () { checkAnswer(2); });
 // check n-th answer in answer array
 function checkAnswer(n) {
     console.log("n=" + n + " answer=" + answer);
-    if (answer[n] == firstNumber + secondNumber) {
+    if (answer[n] == correctAnswer()) {
         localStorage.setItem('level', level + 1)
-        window.location.href ="right.html";
-    } else window.location.href ="wrong.html";
+        window.location.href = "rightAnswer.html";
+    } else window.location.href = "wrongAnswer.html";
 }
+
 

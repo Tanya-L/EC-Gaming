@@ -6,31 +6,36 @@
     <title>Bamse Spel</title>
     <meta name="Author" content="" />
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="jquery-3.3.1.js"></script>
 </head>
 
 <body>
 
 
     <header>
-        <img id="bamse" src="image/bamse.gif" alt="bamse">
-        <span id="bamseText">Räkna med Bamse</span>
-        <img id="honung" src="image/biH.png" alt="honung">
-        <a href="index.html"><img id="home" src="image/home.png" alt="home"></a>
+        <div class='container'>
+            <img id="bamse" src="image/bamse.gif" alt="bamse">
+            <span id="bamseText">Räkna med Bamse</span>
+            <img id="honung" src="image/biH.png" alt="honung">
+            <a href="index.html"><img id="home" src="image/home.png" alt="home"></a>
+        </div>
     </header>
 
     <main>
-        <h1 id="felsvartext">FEL! Försök Igen</h1>
-        <div id="index-gallery">
-            <div class="item">
-
-                <a href="firstQuestions.html"> <img class="fel" src="image/fel.png" alt="fel" /></a>
-                <div id="pilnästafråga">
-                    <p class="nästafråga">Nästa fråga</p>
-                    <a href="#"><img id="pil" src="image/green.png"></a>
+        <div class='container'>
+            <h1 id="felsvartext">FEL! Försök Igen</h1>
+            <div id="index-gallery">
+                <div class="item">
+                    <a href="questions.html"> <img class="fel" src="image/fel.png" alt="fel" width="75%" /></a>
+                    <div id="pilnästafråga">
+                        <!-- <p class="nästafråga">Nästa fråga</p> -->
+                        <!-- <a href="questions.html"><img id="pil" src="image/green.png" width="75%"></a> -->
+                    </div>
                 </div>
             </div>
         </div>
-
+        <script src="main.js"></script>
     </main>
 
 

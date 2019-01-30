@@ -1,6 +1,10 @@
+body {
+    background-color: aqua;
+}
+
 div.container {
     margin: auto;
-    width: 70%;
+    width: 80%;
 }
 
 img#bamse {
