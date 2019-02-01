@@ -1,25 +1,35 @@
-body {
-    background-color: aqua;
+*{
+    background-color: #A8E3F8
 }
 
 div.container {
     margin: auto;
-    width: 80%;
+    width: 70%;
 }
 
 img#bamse {
-    height: 90px;
-    width: 90px;
+    height: 100px;
+    width: 100px;
 }
 
 div#bamseText {
-    font-size: 35px;
+    font-family: 'Short Stack';
+    font-size: 50px;
+    font-weight: bold;
     color: blue;
+    text-align: center;
 }
 
-img#honung {
-    height: 50px;
-    width: 50px;
+#ok {
+    font-size: 50px;
+    color: green;
+    text-align: center;
+}
+
+#fel {
+    font-size: 50px;
+    color: red;
+    text-align: center;
 }
 
 img#home {
@@ -35,9 +45,10 @@ header {
     padding: 10px;
     font-family: sans-serif;
 }
+
 .play {
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -45,20 +56,56 @@ header {
 }
 
 .item{
-  width:200px;
-  text-align:center;
+  width:100px;
+  text-align:left;
   display:block;
   background-color: transparent;
   border: 1px solid transparent;
   margin-right: 10px;
-  margin-bottom: 1px;
+  margin-bottom: 10px; 
   float:left;
 }
 
-#index-gallery{
-  width:465px;
+/* right smile animation */
+.rätt{
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    text-align: center;
+    animation: rättanimation 2s; 
 }
 
-.debug {
-    border: 1px solid red;
+@keyframes rättanimation {
+   0% {width: 150px; height: 100px;}
+   
+   100% {width: 250px; height: 250px;}
+}
+/* wrong smile animation */
+.fel{
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    text-align: center; 
+    animation: rättanimation 2s;  
+ 
+}  
+@keyframes rättanimation {
+    0% {width: 100px; height: 100px;}
+    
+    100% {width: 250px; height: 250px;}
+}
+/* green arrow right */
+#greenarrow {
+    margin-left: 700px;
+}
+/* last page image */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
 }
